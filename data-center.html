@@ -86,10 +86,11 @@
 			   <div class="card1-bg">
 				   <div class="card1-bg-img">
 				<div class="card1-subbg-img"> 
-														<video autoplay loop muted>
-														  <source src="images/datacenter-movie.mp4" type="video/mp4">
-														Your browser does not support the video tag.
-														</video>
+					<img id="loadingImage" src="images/ChallengeDC.png" alt="Loading..." style="display: block; width: 100%; height: auto;">
+														<video id="dataCenterVideo" autoplay loop muted style="display: none;">
+  <source src="images/datacenter-movie.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
 				   </div>
 				   </div>
 			   </div>
@@ -231,12 +232,16 @@
   	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
 
-  <!-- Contact Form JavaScript File -->
-  <script src="contactform/contactform.js"></script>
+
 
   <!-- Template Main Javascript File -->
   <script src="js/main.js"></script>
-
+<script>
+  document.getElementById('dataCenterVideo').addEventListener('canplay', function() {
+    document.getElementById('loadingImage').style.display = 'none';
+    this.style.display = 'block';
+  });
+</script>
 </body>
 
 </html>
